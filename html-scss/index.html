@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positive Sätze</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .quote {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote" onclick="openContents()">Das Leben ist wunderbar.</div>
+
+  <script>
+    const positiveQuotes = [
+      "Heute ist ein großartiger Tag.",
+      "Ich bin dankbar für jede Gelegenheit.",
+      "Positiv denken bringt positive Ergebnisse.",
+      "Träume groß und arbeite hart.",
+      // Weitere positive Sätze hier hinzufügen
+    ];
+
+    function getRandomQuote() {
+      return positiveQuotes[Math.floor(Math.random() * positiveQuotes.length)];
+    }
+
+    function changeBackgroundAndQuote() {
+      const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      document.body.style.backgroundColor = randomColor;
+
+      const quoteElement = document.querySelector(".quote");
+      quoteElement.textContent = getRandomQuote();
+    }
+
+    function openContents() {
+      window.location.href = "contents.html";
+    }
+
+    // Initialisierung bei Seitenaufruf
+    changeBackgroundAndQuote();
+  </script>
+</body>
+</html>
